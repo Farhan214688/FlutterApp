@@ -1,0 +1,20 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Allow unauthenticated users to upload profile pictures
+    match /profile_pictures/{userId} {
+      allow read, write: if true;
+    }
+    
+    // Allow unauthenticated users to upload ID verification images
+    match /id_verification/{userId} {
+      allow read, write: if true;
+    }
+  }
+} 

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "520281661100",
+    "project_id": "rapit-777d7",
+    "storage_bucket": "rapit-777d7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520281661100:android:d90ec076a50cc0c4f4c909",
+        "android_client_info": {
+          "package_name": "com.example.firstt_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2fbRDdvbQY7VOQJWLOn6hVROAwvT3Spw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520281661100:android:0c64cb583c7b45f3f4c909",
+        "android_client_info": {
+          "package_name": "com.rapit.myproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2fbRDdvbQY7VOQJWLOn6hVROAwvT3Spw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

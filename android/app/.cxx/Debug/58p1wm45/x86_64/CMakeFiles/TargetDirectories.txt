@@ -1,0 +1,2 @@
+E:/Rapit/android/app/.cxx/Debug/58p1wm45/x86_64/CMakeFiles/edit_cache.dir
+E:/Rapit/android/app/.cxx/Debug/58p1wm45/x86_64/CMakeFiles/rebuild_cache.dir

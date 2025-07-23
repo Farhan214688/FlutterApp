@@ -1,0 +1,61 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Check if user is admin
+    function isAdmin() {
+      return request.auth != null && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.type == "admin";
+    }
+
+    // Check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Global access for admins to all collections
+    // This rule ensures admins can access any collection
+    match /{document=**} {
+      allow read, write: if isAdmin();
+    }
+    
+    // Allow public read access to specific collections
+    match /weekly_offers/{offerId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+    
+    match /services/{serviceId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+    
+    // Collections specifically needed for admin portal
+    // Explicit rules for professional_verifications and professional_applications
+    match /professional_verifications/{docId} {
+      allow read, write: if isAdmin();
+    }
+    
+    match /professional_applications/{docId} {
+      allow read, write: if isAdmin();
+    }
+    
+    match /professionals/{docId} {
+      allow read: if true;
+      allow write: if isAdmin() || (isAuthenticated() && request.auth.uid == docId);
+    }
+    
+    // Allow controlled access to users collection
+    match /users/{userId} {
+      // Any authenticated user can read all users
+      allow read: if isAuthenticated();
+      allow write: if isAdmin() || (isAuthenticated() && request.auth.uid == userId);
+    }
+    
+    // Account status collection for tracking active/inactive users
+    match /account_status/{userId} {
+      allow read, write: if isAdmin();
+      allow read: if isAuthenticated() && request.auth.uid == userId;
+    }
+  }
+} 

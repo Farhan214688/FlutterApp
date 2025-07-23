@@ -1,0 +1,26 @@
+<lint-module
+    format="1"
+    dir="C:\Users\Farhan\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_facebook_auth-6.2.0\android"
+    name=":flutter_facebook_auth"
+    type="LIBRARY"
+    maven="app.meedu.flutter_facebook_auth:flutter_facebook_auth:"
+    agpVersion="8.2.1"
+    buildFolder="E:\Rapit\build\flutter_facebook_auth"
+    bootClassPath="C:\Users\Farhan\AppData\Local\Android\sdk\platforms\android-31\android.jar;C:\Users\Farhan\AppData\Local\Android\sdk\build-tools\34.0.0\core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-31"
+    neverShrinking="true">
+  <lintOptions
+      disable="InvalidPackage"
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true">
+    <severities>
+      <severity
+        id="InvalidPackage"
+        severity="IGNORE" />
+    </severities>
+  </lintOptions>
+  <variant name="release"/>
+</lint-module>
